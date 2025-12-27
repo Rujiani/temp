@@ -248,8 +248,8 @@ static int input_dev_probe(struct pci_dev *pdev, const struct pci_device_id *id)
 
     printk(KERN_INFO "input_dev: BAR2 mapped at %p\n", priv->bar2);
 
-    iowrite32(1024, priv->bar2 + MAX_BUFFER_SIZE_OFFSET);
-    iowrite32(1024, priv->bar2 + BUFFER_SIZE_OFFSET);
+    iowrite32(30720, priv->bar2 + MAX_BUFFER_SIZE_OFFSET);  // 30 KB
+    iowrite32(30720, priv->bar2 + BUFFER_SIZE_OFFSET);
     iowrite32(INPUT_BUFFER_OFFSET, priv->bar2 + BUFFER_START_OFFSET);
     iowrite32(0, priv->bar2 + READ_POS_OFFSET);   // Позиция чтения драйвера
     iowrite32(0, priv->bar2 + BUFFER_POS_OFFSET); // Позиция записи хоста
