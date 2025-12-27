@@ -1,0 +1,1 @@
+savedcmd_input_device.ko := ld -r -m elf_x86_64 -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T /usr/src/kernels/6.17.10-300.fc43.x86_64/scripts/module.lds -o input_device.ko input_device.o input_device.mod.o .module-common.o
